@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Statpad-React/static/css/main.0616384d.css",
+    "main.js": "/Statpad-React/static/js/main.ce399f50.js",
+    "index.html": "/Statpad-React/index.html",
+    "main.0616384d.css.map": "/Statpad-React/static/css/main.0616384d.css.map",
+    "main.ce399f50.js.map": "/Statpad-React/static/js/main.ce399f50.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0616384d.css",
+    "static/js/main.ce399f50.js"
+  ]
+}
