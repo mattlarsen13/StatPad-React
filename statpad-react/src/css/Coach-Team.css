@@ -2,7 +2,16 @@
 .coach-team {
     display: flex;
     text-align: center;
+    overflow: visible;
 }
+
+hr .border-line {
+    border: none;
+    height: 1px;  
+    background-color: var(--black-color); 
+    margin-right: 35px;
+    margin-left: 35px;
+  }
 
 .coach h2.active,
 .team h2.active {
@@ -28,6 +37,9 @@
 @media only screen and (max-width: 600px) {
     .coach-team {
         flex-direction: column;
+    }
+    .border-line {
+        display: block;
     }
 }
 

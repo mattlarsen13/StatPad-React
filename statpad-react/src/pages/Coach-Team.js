@@ -3,7 +3,7 @@ import "../css/Coach-Team.css"
 const CoachTeam = () => {
     return (
         <div className = "coach-team">
-            <hr className="border-line"/>
+            <hr class="border-line"></hr>
             <div class = "coach-team">
                 <div class = "coach">
                     <h2 class="active">Coach Achievements</h2>
@@ -42,7 +42,7 @@ const CoachTeam = () => {
                     </div>
                 </div>
             </div>
-            <hr className="border-line"/>
+            <hr class="border-line"></hr>
         </div>
     );
 };
