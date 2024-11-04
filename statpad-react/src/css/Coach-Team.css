@@ -5,12 +5,13 @@
     overflow: visible;
 }
 
-hr .border-line {
+
+hr.border-line {
     border: none;
     height: 1px;  
     background-color: var(--black-color); 
     margin-right: 35px;
-    margin-left: 35px;
+    margin-left: 35px; 
   }
 
 .coach h2.active,

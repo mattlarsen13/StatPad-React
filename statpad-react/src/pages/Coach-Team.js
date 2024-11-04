@@ -2,12 +2,12 @@ import "../css/Coach-Team.css"
 
 const CoachTeam = () => {
     return (
-        <div className = "coach-team">
+        <div className = "coach-team-info">
             <hr class="border-line"></hr>
             <div class = "coach-team">
                 <div class = "coach">
                     <h2 class="active">Coach Achievements</h2>
-                    <div class = "coach1">
+                    <div class = "coach1"> 
                         <img class="c1-img1" src="images/bb.jpg"></img>
                         <h2 class="active">Bill Belichick</h2>
                         <p>Bill Belichick is a legendary NFL coach, known for leading the New England Patriots to six Super Bowl titles. His career began in 1975, and he gained recognition as the defensive coordinator for the New York Giants. Though his first head coaching job with the Cleveland Browns was short, he found immense success with the Patriots starting in 2000. Renowned for his strategic mind and adaptability, Belichick is considered one of the greatest coaches in NFL history.</p>

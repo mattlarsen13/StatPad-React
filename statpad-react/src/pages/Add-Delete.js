@@ -6,7 +6,7 @@ const AddDelete = () => {
             <hr class="border-line"></hr>
             <div class = "add-delete-title">
                 <h2 class="active">Add/Delete Your Own Player!</h2>
-            </div>
+            </div> 
             <div class = "add-delete-info">
                 <div class="add">
                     <h3>Add Player Name</h3>
