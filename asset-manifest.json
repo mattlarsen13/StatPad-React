@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Statpad-React/static/css/main.0616384d.css",
-    "main.js": "/Statpad-React/static/js/main.ce399f50.js",
-    "index.html": "/Statpad-React/index.html",
-    "main.0616384d.css.map": "/Statpad-React/static/css/main.0616384d.css.map",
-    "main.ce399f50.js.map": "/Statpad-React/static/js/main.ce399f50.js.map"
+    "main.css": "/statpad-react/static/css/main.0616384d.css",
+    "main.js": "/statpad-react/static/js/main.24b2444e.js",
+    "index.html": "/statpad-react/index.html",
+    "main.0616384d.css.map": "/statpad-react/static/css/main.0616384d.css.map",
+    "main.24b2444e.js.map": "/statpad-react/static/js/main.24b2444e.js.map"
   },
   "entrypoints": [
     "static/css/main.0616384d.css",
-    "static/js/main.ce399f50.js"
+    "static/js/main.24b2444e.js"
   ]
 }
