@@ -1,0 +1,48 @@
+/* Home */
+.description {
+    max-width: 70%;
+    text-align: center;
+    margin: 20px auto;
+    font-size: 1em;
+}
+.description h2.active {
+    font-weight: bold;
+    color: var(--very-dark-blue);
+}
+.description p {
+    font-size: large;
+}
+.images {
+    margin-top: 50px;
+    margin-left: 140px;
+}
+.slide-show {
+    border-radius: 20px;
+    width:1200px;
+    height:500px;
+    overflow: hidden;
+    position: relative;
+    object-fit: cover;
+}
+.slides {
+    margin-top: 10px;
+    padding-left: 450px;
+    margin-bottom: 45px;
+}
+.slide1, .slide2, .slide3 {
+    border-radius: 5px;
+    width: 100px;
+    height: 50px;
+}
+
+/* Max Width 600px */
+@media only screen and (max-width: 600px) {
+    /* Home */
+    .description {
+        flex-direction: column;
+        max-width: 80%;
+    }
+    .images {
+        display: none;
+    }
+}

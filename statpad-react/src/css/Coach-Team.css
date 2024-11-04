@@ -1,0 +1,33 @@
+/* Coach-Team */
+.coach-team {
+    display: flex;
+    text-align: center;
+}
+
+.coach h2.active,
+.team h2.active {
+    font-weight: bold;
+    color: var(--very-dark-blue);
+}
+
+.coach div,
+.team div {
+    margin: 0 10px 10px;
+}
+
+.coach1, .coach2, .coach3,
+.team1, .team2, .team3 {
+    background-color: var(--section-color);
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 1300px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Max Width 600px */
+@media only screen and (max-width: 600px) {
+    .coach-team {
+        flex-direction: column;
+    }
+}
+

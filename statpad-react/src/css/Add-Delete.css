@@ -1,0 +1,64 @@
+/* Add-Delete */
+.add-delete-title {
+    text-align: center;
+}
+.add-delete-title h2.active {
+    font-weight: bold;
+    color: var(--very-dark-blue);
+}
+.add-delete-info {
+    display: flex;
+    justify-content: space-around;
+    margin-top: -2%;
+    text-align: center;
+}
+.add {
+    padding: 15px;
+}
+input[type="text"] {
+    width: 300px; 
+    height: 40px; 
+    padding: 5px; 
+    font-size: 16px; 
+    border: 2px solid var(--black-color); 
+    border-radius: 5px; 
+}
+input[type="answer"] {
+    width: 300px; 
+    height: 40px; 
+    padding: 5px; 
+    font-size: 16px; 
+    border: 2px solid var(--black-color); 
+    border-radius: 5px; 
+}
+button {
+    padding: 10px 20px; 
+    font-size: 16px;
+    color: var(--dark-blue); 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+}
+
+button a {
+    color: var(--dark-blue);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+    color: var(--very-dark-blue);
+}
+
+/* Max Width 600px */
+@media only screen and (max-width: 600px) {
+     /* Add-Delete */
+     .add-delete-info {
+        flex-direction: column;
+        text-align: center;
+        padding: 5px;
+    }
+    .delete {
+        margin-top: 5%;
+    }
+    
+}

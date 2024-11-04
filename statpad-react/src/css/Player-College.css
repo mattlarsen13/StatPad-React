@@ -1,0 +1,66 @@
+/* Player-College */
+.player-title {
+    text-align: center;
+    font-weight: bold;
+    color: var(--very-dark-blue);
+}
+
+.players {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 0; 
+}
+
+.player-card {
+    background-color: var(--section-color);
+    border-radius: 5px;
+    box-shadow: 2px 4px 10px var(--shadow);
+    margin: 10px;
+    padding: 15px;
+    text-align: center;
+    flex: 0 1 calc(33.33% - 20px);
+    max-width: calc(33.33% - 20px);
+    box-sizing: border-box;
+}
+
+.player-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.player-card h2.active {
+    font-weight: bold;
+    color: var(--very-dark-blue);
+}
+
+.player-card a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: var(--dark-blue);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.player-card a:hover {
+    color: var(--very-dark-blue);
+}
+
+.border-line {
+    border: none;
+    height: 1px;  
+    background-color: var(--black-color); 
+    margin-right: 35px;
+    margin-left: 35px;
+}
+
+/* Adjust layout for smaller screens */
+@media only screen and (max-width: 768px) {
+    .player-card {
+        flex: 0 1 45%; /* Two cards per row on smaller screens */
+        max-width: 45%;
+    }
+}
