@@ -41,7 +41,6 @@ body {
 #main-nav a:hover,
 #main-nav h2.active {
   color: var(--very-dark-blue);
-  font-weight: bold;
 }
 
 #main-nav h2 {

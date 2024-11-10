@@ -1,13 +1,16 @@
-.hide-small {
-    display: none;
+.show {
+    display: flex !important;
 }
 
 /* Media Query */
-@media only screen and (max-width: 760px) {
-    .hide-small {
-        display: flex;
+@media only screen and (max-width: 768px) {
+    .show {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 10px;
     }
-    #main-nav {
-        display: none;
+    .hide {
+        display: none !important;
     }
+    
 }

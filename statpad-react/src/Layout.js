@@ -13,7 +13,13 @@ const Layout = () => {
     return(
         <>
             <Header />
-            <nav id="main-nav" className={menuOpen?"":"hide-small"}>
+            <div className="hamburger" onClick={toggleMenu}>
+                <div className="bar"></div>
+                <div className="bar"></div>
+                <div className="bar"></div>
+            </div>
+
+            <nav id="main-nav" className={menuOpen?"show":"hide"}>
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/player-college">Player History</Link></li>
                 <li><Link to="/coach-team">Coach % Team History</Link></li>

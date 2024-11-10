@@ -10,8 +10,14 @@
 }
 .contact {
     text-align: center;
-    justify-content: space-around;
+    justify-content: space-around; 
     padding-left: 3%;
+}
+#section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    align-items: center;
 }
 
 .about p {
