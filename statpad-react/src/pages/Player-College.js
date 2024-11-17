@@ -1,51 +1,66 @@
-import "../css/Player-College.css"
+import React, { useState, useEffect } from 'react';
+import "../css/Player-College.css";
 
 const PlayerCollege = () => {
+    const [players, setPlayers] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    // Internal PlayerCard function component
+    const PlayerCard = ({ player }) => {
+        return (
+            <div className="player-card">
+                <h2 className="active">{player.name}</h2>
+                <a href={player["image-link"]}>
+                    <img src={player.image} alt={player.name} />
+                </a>
+                <p>{player.description}</p>
+                <p>
+                    <a href={player["image-link"]}>Click to see highlights.</a>
+                </p>
+            </div>
+        );
+    };
+
+    useEffect(() => {
+        const fetchPlayers = async () => {
+            try {
+                const response = await fetch('https://statpad-react-back.onrender.com/api/players');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
+                setPlayers(data);
+                setIsLoading(false);
+            } catch (error) {
+                setError('Failed to fetch players data');
+                setIsLoading(false);
+            }
+        };
+
+        fetchPlayers();
+    }, []);
+
+    if (isLoading) {
+        return <div className="player-college">Loading...</div>;
+    }
+
+    if (error) {
+        return <div className="player-college">Error: {error}</div>;
+    }
+
     return (
-        <div className = "player-college">
-            <hr class="border-line"></hr>
-            <div class = "player-title">
-                <h2 class="active">Star Players!</h2>
+        <div className="player-college">
+            <hr className="border-line" />
+            <div className="player-title">
+                <h2 className="active">Star Players!</h2>
             </div>
-            <div class="players">
-                <div class = "player-card">
-                    <h2 class="active">Patrick Mahomes</h2>
-                    <a href="https://www.youtube.com/watch?v=2sj1d7dQgfc"><img src="images/pm.webp"></img></a>
-                    <p>"Patrick Mahomes is a star quarterback for the Kansas City Chiefs, known for his Super Bowl LIV win and MVP award. At Texas Tech, he led the NCAA in passing yards and total touchdowns in 2016, setting a single-game record for total offense. Drafted 10th overall in 2017, Mahomes quickly became one of the NFL's top talents. In the 2023 season, he played 16 games, completing 67.2% of his passes for 4,183 yards and 27 touchdowns, alongside 14 interceptions. With an average of 261.4 passing yards per game, Mahomes continues to demonstrate his elite status in the league, earning a Pro Bowl selection for his outstanding performance."</p>                
-                    <p><a href="https://www.youtube.com/watch?v=2sj1d7dQgfc">Click to see highlights.</a></p>
-                </div>
-                <div class = "player-card">
-                    <h2 class="active">Patrick Mahomes</h2>
-                    <a href="https://www.youtube.com/watch?v=2sj1d7dQgfc"><img src="images/pm.webp"></img></a>
-                    <p>"Patrick Mahomes is a star quarterback for the Kansas City Chiefs, known for his Super Bowl LIV win and MVP award. At Texas Tech, he led the NCAA in passing yards and total touchdowns in 2016, setting a single-game record for total offense. Drafted 10th overall in 2017, Mahomes quickly became one of the NFL's top talents. In the 2023 season, he played 16 games, completing 67.2% of his passes for 4,183 yards and 27 touchdowns, alongside 14 interceptions. With an average of 261.4 passing yards per game, Mahomes continues to demonstrate his elite status in the league, earning a Pro Bowl selection for his outstanding performance."</p>                
-                    <p><a href="https://www.youtube.com/watch?v=2sj1d7dQgfc">Click to see highlights.</a></p>
-                </div>
-                <div class = "player-card">
-                    <h2 class="active">Patrick Mahomes</h2>
-                    <a href="https://www.youtube.com/watch?v=2sj1d7dQgfc"><img src="images/pm.webp"></img></a>
-                    <p>"Patrick Mahomes is a star quarterback for the Kansas City Chiefs, known for his Super Bowl LIV win and MVP award. At Texas Tech, he led the NCAA in passing yards and total touchdowns in 2016, setting a single-game record for total offense. Drafted 10th overall in 2017, Mahomes quickly became one of the NFL's top talents. In the 2023 season, he played 16 games, completing 67.2% of his passes for 4,183 yards and 27 touchdowns, alongside 14 interceptions. With an average of 261.4 passing yards per game, Mahomes continues to demonstrate his elite status in the league, earning a Pro Bowl selection for his outstanding performance."</p>                
-                    <p><a href="https://www.youtube.com/watch?v=2sj1d7dQgfc">Click to see highlights.</a></p>
-                </div>
-                <div class = "player-card">
-                    <h2 class="active">Patrick Mahomes</h2>
-                    <a href="https://www.youtube.com/watch?v=2sj1d7dQgfc"><img src="images/pm.webp"></img></a>
-                    <p>"Patrick Mahomes is a star quarterback for the Kansas City Chiefs, known for his Super Bowl LIV win and MVP award. At Texas Tech, he led the NCAA in passing yards and total touchdowns in 2016, setting a single-game record for total offense. Drafted 10th overall in 2017, Mahomes quickly became one of the NFL's top talents. In the 2023 season, he played 16 games, completing 67.2% of his passes for 4,183 yards and 27 touchdowns, alongside 14 interceptions. With an average of 261.4 passing yards per game, Mahomes continues to demonstrate his elite status in the league, earning a Pro Bowl selection for his outstanding performance."</p>                
-                    <p><a href="https://www.youtube.com/watch?v=2sj1d7dQgfc">Click to see highlights.</a></p>
-                </div>
-                <div class = "player-card">
-                    <h2 class="active">Patrick Mahomes</h2>
-                    <a href="https://www.youtube.com/watch?v=2sj1d7dQgfc"><img src="images/pm.webp"></img></a>
-                    <p>"Patrick Mahomes is a star quarterback for the Kansas City Chiefs, known for his Super Bowl LIV win and MVP award. At Texas Tech, he led the NCAA in passing yards and total touchdowns in 2016, setting a single-game record for total offense. Drafted 10th overall in 2017, Mahomes quickly became one of the NFL's top talents. In the 2023 season, he played 16 games, completing 67.2% of his passes for 4,183 yards and 27 touchdowns, alongside 14 interceptions. With an average of 261.4 passing yards per game, Mahomes continues to demonstrate his elite status in the league, earning a Pro Bowl selection for his outstanding performance."</p>                
-                    <p><a href="https://www.youtube.com/watch?v=2sj1d7dQgfc">Click to see highlights.</a></p>
-                </div>
-                <div class = "player-card">
-                    <h2 class="active">Patrick Mahomes</h2>
-                    <a href="https://www.youtube.com/watch?v=2sj1d7dQgfc"><img src="images/pm.webp"></img></a>
-                    <p>"Patrick Mahomes is a star quarterback for the Kansas City Chiefs, known for his Super Bowl LIV win and MVP award. At Texas Tech, he led the NCAA in passing yards and total touchdowns in 2016, setting a single-game record for total offense. Drafted 10th overall in 2017, Mahomes quickly became one of the NFL's top talents. In the 2023 season, he played 16 games, completing 67.2% of his passes for 4,183 yards and 27 touchdowns, alongside 14 interceptions. With an average of 261.4 passing yards per game, Mahomes continues to demonstrate his elite status in the league, earning a Pro Bowl selection for his outstanding performance."</p>                
-                    <p><a href="https://www.youtube.com/watch?v=2sj1d7dQgfc">Click to see highlights.</a></p>
-                </div>
+            <div className="players">
+                {players.map((player) => (
+                    <PlayerCard key={player._id} player={player} />
+                ))}
             </div>
-            <hr class="border-line"></hr>
+            <hr className="border-line" />
         </div>
     );
 };
