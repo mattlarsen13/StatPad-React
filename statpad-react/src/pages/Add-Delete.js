@@ -1,6 +1,40 @@
 import "../css/Add-Delete.css"
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import AddPlayer from "../components/AddPlayer";
+
 
 const AddDelete = () => {
+    const [showAddDialog, setShowAddDialog] = useState(false);
+    const [players, setPlayers] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null);
+    useEffect(() => {
+        const fetchPlayers = async () => {
+            try {
+                const response = await fetch('https://statpad-react-back.onrender.com/api/players');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
+                setPlayers(data);
+                setIsLoading(false);
+            } catch (error) {
+                setError('Failed to fetch players data');
+                setIsLoading(false);
+            }
+        };
+
+        fetchPlayers();
+    }, []);
+
+    const openAddDialog = () => {
+        setShowAddDialog(true);
+    }
+    const closeAddDialog = () => {
+        setShowAddDialog(false);
+    }
+
     return (
         <div className = "add-delete">
             <hr class="border-line"></hr>
@@ -9,32 +43,19 @@ const AddDelete = () => {
             </div> 
             <div class = "add-delete-info">
                 <div class="add">
-                    <h3>Add Player Name</h3>
-                    <input type="text" placeholder="Enter player name" />
-                    <button type="button">Add Player Name</button>
-                    <h3>Add Image of Athlete</h3>
-                    <input type="answer" placeholder="Enter image of athlete" />
-                    <button type="button">Add Player Image</button>
-                    <h3>Add Highlight Reel Link of Athlete</h3>
-                    <input type="answer" placeholder="Enter highlight reel link of athlete" />
-                    <button type="button">Add Highlight Reel Link</button>
-                    <h3>Add Description of Athlete</h3>
-                    <input type="answer" placeholder="Enter description of athlete" />
-                    <button type="button">Add Player Description</button>
+                    <button id="add-player" onClick={openAddDialog}>
+                        Add Player
+                    </button>
+                    {showAddDialog ? (
+                        <AddPlayer addPlayer={AddPlayer} closeDialog={closeAddDialog} />
+                    ) : (
+                        ""
+                    )}
                 </div>
                 <div class="delete">
-                    <h3>Delete Player Name</h3>
-                    <input type="text" placeholder="Enter player name" />
-                    <button type="button">Delete Player Name</button>
-                    <h3>Delete Image of Athlete</h3>
-                    <input type="answer" placeholder="Enter image of athlete" />
-                    <button type="button">Delete Player Image</button>
-                    <h3>Delete Highlight Reel Link of Athlete</h3>
-                    <input type="answer" placeholder="Enter highlight reel link of athlete" />
-                    <button type="button">Delete Highlight Reel Link</button>
-                    <h3>Delete Description of Athlete</h3>
-                    <input type="answer" placeholder="Enter description of athlete" />
-                    <button type="button">Delete Player Description</button>
+                <button id="delete-player" onClick={openAddDialog}>
+                        Delete Player
+                    </button>
                 </div>
             </div>
             <hr class="border-line"></hr>
@@ -42,4 +63,5 @@ const AddDelete = () => {
     );
 };
 
-export default AddDelete;
+export default AddDelete; 
+

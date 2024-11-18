@@ -5,6 +5,7 @@ const PlayerCollege = () => {
     const [players, setPlayers] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [showDialog, setShowDialog] = useState(false);
 
     const PlayerCard = ({ player }) => {
         return (

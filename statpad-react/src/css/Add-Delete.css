@@ -1,4 +1,7 @@
 /* Add-Delete */
+.add-delete {
+    min-height: 1028px;
+}
 .add-delete-title {
     text-align: center;
 }
