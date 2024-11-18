@@ -6,7 +6,6 @@ const PlayerCollege = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    // Internal PlayerCard function component
     const PlayerCard = ({ player }) => {
         return (
             <div className="player-card">
