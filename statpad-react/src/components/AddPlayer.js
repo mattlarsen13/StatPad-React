@@ -22,18 +22,18 @@ const AddPlayer = (props) => {
     setResult("Sending....");
     const formData = new FormData(event.target);
 
-    const response = await fetch("http://localhost:3001/api/players/", {
+    const response = await fetch("http://localhost:3000/api/players", {
       method: "POST",
       body: formData,
     });
 
     if (response.status === 200) {
-      setResult("House Successfully Added");
+      setResult("Player Successfully Added");
       event.target.reset(); //reset your form fields
-      props.addHousePlan(await response.json());
+      props.AddPlayer(await response.json());
       props.closeDialog();
     } else {
-      console.log("Error adding house", response);
+      console.log("Error adding player", response);
       setResult(response.message);
     }
   };
@@ -84,8 +84,8 @@ const AddPlayer = (props) => {
             <p>
               <label htmlFor="description">Description:</label>
               <input
-                type="number"
-                id="bathrooms"
+                type="text"
+                id="description"
                 name="description"
                 value={inputs.description || ""}
                 onChange={handleChange}
