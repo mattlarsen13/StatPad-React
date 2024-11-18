@@ -22,7 +22,7 @@ const AddPlayer = (props) => {
     setResult("Sending....");
     const formData = new FormData(event.target);
 
-    const response = await fetch("http://localhost:3000/api/players", {
+    const response = await fetch("https://statpad-react-back.onrender.com/api/players", {
       method: "POST",
       body: formData,
     });

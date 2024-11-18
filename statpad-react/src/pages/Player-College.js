@@ -12,7 +12,7 @@ const PlayerCollege = () => {
             <div className="player-card">
                 <h2 className="active">{player.name}</h2>
                 <a href={player["imagelink"]}>
-                    <img src={player.image} alt={player.name} />
+                    <img src={`https://statpad-react-back.onrender.com/${player.image}`} alt={player.name} />
                 </a>
                 <p>{player.description}</p>
                 <p>
