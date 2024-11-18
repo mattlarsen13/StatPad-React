@@ -11,12 +11,12 @@ const PlayerCollege = () => {
         return (
             <div className="player-card">
                 <h2 className="active">{player.name}</h2>
-                <a href={player["image-link"]}>
+                <a href={player["imagelink"]}>
                     <img src={player.image} alt={player.name} />
                 </a>
                 <p>{player.description}</p>
                 <p>
-                    <a href={player["image-link"]}>Click to see highlights.</a>
+                    <a href={player["imagelink"]}>Click to see highlights.</a>
                 </p>
             </div>
         );

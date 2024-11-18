@@ -30,7 +30,6 @@ const AddPlayer = (props) => {
     if (response.status === 200) {
       setResult("Player Successfully Added");
       event.target.reset(); //reset your form fields
-      props.AddPlayer(await response.json());
       props.closeDialog();
     } else {
       console.log("Error adding player", response);
@@ -76,7 +75,7 @@ const AddPlayer = (props) => {
               <input
                 type="url"
                 id="link"
-                name="image-link"
+                name="imagelink"
                 onChange={handleChange}
                 required
               />
