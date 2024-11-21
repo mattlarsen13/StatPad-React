@@ -20,7 +20,7 @@ const AddPlayer = (props) => {
   const onSubmit = async (event) => {
     event.preventDefault();
     setResult("Sending....");
-    const formData = new FormData(event.target);
+    const formData = new FormData(event.target); 
 
     const response = await fetch("https://statpad-react-back.onrender.com/api/players", {
       method: "POST",
