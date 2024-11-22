@@ -10,7 +10,7 @@ const DeletePlayer = (props) => {
   const deletePlayer = async() => {
     console.log("DEBUG: deletePlayer const, fetching api/players and method 'DELETE'");
     console.log("DEBUG: Sending delete request for player ID:", selectedPlayer, "Type:", typeof selectedPlayer);
-    const response = await fetch(`http://localhost:3001/api/players/${selectedPlayer}`,{ // CHANGE TO RENDER WHEN FINISHED TESTING
+    const response = await fetch(`https://statpad-react-back.onrender.com/api/players/${selectedPlayer}`,{ // CHANGE TO RENDER WHEN FINISHED TESTING
     method:"DELETE"
    });
 
@@ -24,7 +24,7 @@ const DeletePlayer = (props) => {
 
   useEffect(() => {
     (async () => {
-      const response = await axios.get("http://localhost:3001/api/players");
+      const response = await axios.get("https://statpad-react-back.onrender.com/api/players");
       setPlayers(response.data);
     })();
   }, []); 
