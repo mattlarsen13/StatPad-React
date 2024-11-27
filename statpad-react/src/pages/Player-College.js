@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import "../css/Player-College.css";
+import EditPlayer from "../components/EditPlayer";
 
 const PlayerCollege = () => {
     const [players, setPlayers] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
     const [showDialog, setShowDialog] = useState(false);
+    const [showEditDialog, setShowEditDialog] = useState(false);
 
     const PlayerCard = ({ player }) => {
         return (
@@ -18,6 +20,16 @@ const PlayerCollege = () => {
                 <p>
                     <a href={player["imagelink"]}>Click to see highlights.</a>
                 </p>
+                <div className="edit-player">
+                    <button id="edit-button" onClick={openEditDialog}>
+                        Edit Player
+                    </button>
+                        {showEditDialog ? (
+                            <EditPlayer editPlayer={EditPlayer} closeDialog={closeEditDialog} />
+                        ) : (
+                            ""
+                        )}
+                </div>
             </div>
         );
     };
@@ -44,10 +56,16 @@ const PlayerCollege = () => {
     if (isLoading) {
         return <div className="player-college">Loading...</div>;
     }
-
     if (error) {
         return <div className="player-college">Error: {error}</div>;
     }
+
+    const openEditDialog = () => {
+        setShowEditDialog(true);
+    };
+    const closeEditDialog = () => {
+        setShowEditDialog(false);
+    };
 
     return (
         <div className="player-college">

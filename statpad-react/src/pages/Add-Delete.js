@@ -4,7 +4,6 @@ import axios from "axios";
 import AddPlayer from "../components/AddPlayer";
 import DeletePlayer from "../components/DeletePlayer";
 
-
 const AddDelete = () => {
     const [showAddDialog, setShowAddDialog] = useState(false);
     const [showDeleteDialog, setShowDeleteDialog] = useState(false);
@@ -28,7 +27,7 @@ const AddDelete = () => {
         };
 
         fetchPlayers();
-    }, []);
+    }, []); 
 
     const openAddDialog = () => {
         setShowAddDialog(true);

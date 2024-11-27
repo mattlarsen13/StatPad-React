@@ -10,7 +10,7 @@ const DeletePlayer = (props) => {
   const deletePlayer = async() => {
     console.log("DEBUG: deletePlayer const, fetching api/players and method 'DELETE'");
     console.log("DEBUG: Sending delete request for player ID:", selectedPlayer, "Type:", typeof selectedPlayer);
-    const response = await fetch(`https://statpad-react-back.onrender.com/api/players/${selectedPlayer}`,{ // CHANGE TO RENDER WHEN FINISHED TESTING
+    const response = await fetch(`https://statpad-react-back.onrender.com/api/players/${selectedPlayer}`,{ 
     method:"DELETE"
    });
 
