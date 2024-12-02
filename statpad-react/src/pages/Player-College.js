@@ -9,7 +9,21 @@ const PlayerCollege = () => {
     const [showDialog, setShowDialog] = useState(false);
     const [showEditDialog, setShowEditDialog] = useState(false);
 
+    const updatePlayer = (updatedPlayer) => {
+        setPlayers(players.map(player => 
+            player._id === updatedPlayer._id ? updatedPlayer : player
+        ));
+    };
+
     const PlayerCard = ({ player }) => {
+        const [showEditDialog, setShowEditDialog] = useState(false);
+        const openEditDialog = () => {
+            setShowEditDialog(true);
+        };
+        const closeEditDialog = () => {
+            setShowEditDialog(false);
+        };
+
         return (
             <div className="player-card">
                 <h2 className="active">{player.name}</h2>
@@ -25,7 +39,16 @@ const PlayerCollege = () => {
                         Edit Player
                     </button>
                         {showEditDialog ? (
-                            <EditPlayer editPlayer={EditPlayer} closeDialog={closeEditDialog} />
+                            <EditPlayer 
+                                editPlayer={EditPlayer} 
+                                closeDialog={closeEditDialog}
+                                updatePlayer={updatePlayer}
+                                _id={player._id}
+                                name={player.name}
+                                imagelink={player.imagelink}
+                                description={player.description}
+                                image={player.image}
+                            />
                         ) : (
                             ""
                         )}
@@ -75,7 +98,7 @@ const PlayerCollege = () => {
             </div>
             <div className="players">
                 {players.map((player) => (
-                    <PlayerCard key={player._id} player={player} />
+                    <PlayerCard key={player._id} player={player}/>
                 ))}
             </div>
             <hr className="border-line" />

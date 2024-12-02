@@ -29,6 +29,10 @@ const EditPlayer = (props) => {
 
         const formData = new FormData(event.target);
         console.log(...formData);
+
+        if (!inputs.img) {
+            formData.append('image', props.image);
+        }
         const response = await fetch(`http://localhost:3001/api/players/${props._id}`,{
             method:"PUT",
             body:formData
@@ -37,7 +41,7 @@ const EditPlayer = (props) => {
         if(response.status === 200) {
             setResult("Player successfully updated");
             event.target.reset();
-            props.updatePlayer(await response.json()); // ? updatePlayer?
+            props.updatePlayer(await response.json());
             props.closeDialog();
         } else {
             setResult("Error editing player. Apologies");
@@ -101,15 +105,13 @@ const EditPlayer = (props) => {
                     <section className="columns">
                     <p id="img-prev-section">
                         <img
-                        id="img-prev"
-                        src={
-                            inputs.img != null
-                            ? URL.createObjectURL(inputs.img)
-                            : inputs.prev_img != null
-                            ? `http://localhost:3001/images/${inputs.prev_img}`
-                            : ""
-                        }
-                        alt=""
+                            id="img-prev"
+                            src={
+                                inputs.img != null
+                                ? URL.createObjectURL(inputs.img)
+                                : `https://statpad-react-back.onrender.com/${props.image}`
+                            }
+                            alt=""
                         />
                     </p>
                     </section>
