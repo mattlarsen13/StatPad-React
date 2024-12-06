@@ -29,7 +29,7 @@ const EditPlayer = (props) => {
 
         const formData = new FormData(event.target);
         console.log(...formData);
-        if (!inputs.img) {
+        if (!inputs.image) {
             formData.append('image', props.image);
         }
         console.log("Before fetch");
