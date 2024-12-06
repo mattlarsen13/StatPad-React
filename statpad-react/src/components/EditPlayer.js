@@ -29,7 +29,6 @@ const EditPlayer = (props) => {
 
         const formData = new FormData(event.target);
         console.log(...formData);
-        console.log("Before inputs.img");
         if (!inputs.img) {
             formData.append('image', props.image);
         }
