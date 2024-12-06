@@ -27,11 +27,21 @@ const EditPlayer = (props) => {
         event.preventDefault();
         setResult("Sending...");
 
-        const formData = new FormData(event.target);
+        /*const formData = new FormData(event.target);
         console.log(...formData);
         if (!inputs.img) {
             formData.append('image', props.image);
-        }
+        }*/
+            const formData = new FormData();
+            formData.append("_id", inputs._id);
+            formData.append("name", inputs.name);
+            formData.append("imagelink", inputs.imagelink);
+            formData.append("description", inputs.description);
+            if (inputs.img) {
+                formData.append("image", inputs.img); // Handle new file upload
+            } else {
+                formData.append("image", props.image); // Use existing image
+            }
         console.log("Before fetch");
         const response = await fetch(`https://statpad-react-backend-mongodb.onrender.com/api/players/${props._id}`,{
             method:"PUT",
