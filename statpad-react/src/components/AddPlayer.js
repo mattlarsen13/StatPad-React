@@ -22,7 +22,10 @@ const AddPlayer = (props) => {
     setResult("Sending....");
     const formData = new FormData(event.target); 
 
-
+    /*const response = await fetch("http://localhost:3001/api/players", {
+      method: "POST",
+      body: formData,
+    }); */
     const response = await fetch(`https://statpad-react-backend-mongodb.onrender.com/api/players`, {
       method: "POST",
       body: formData,

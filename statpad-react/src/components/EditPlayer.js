@@ -109,7 +109,7 @@ const EditPlayer = (props) => {
                             src={
                                 inputs.img != null
                                 ? URL.createObjectURL(inputs.img)
-                                : `https://statpad-react-back.onrender.com/${props.image}`
+                                : `https://statpad-react-backend-mongodb.onrender.com/${props.image}`
                             }
                             alt=""
                         />
