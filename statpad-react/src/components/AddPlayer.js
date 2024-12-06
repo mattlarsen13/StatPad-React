@@ -22,10 +22,11 @@ const AddPlayer = (props) => {
     setResult("Sending....");
     const formData = new FormData(event.target); 
 
-    const response = await fetch("https://statpad-react-back.onrender.com/api/players", {
+
+    const response = await fetch(`https://statpad-react-backend-mongodb.onrender.com/api/players`, {
       method: "POST",
       body: formData,
-    });
+    }); 
 
     if (response.status === 200) {
       setResult("Player Successfully Added");

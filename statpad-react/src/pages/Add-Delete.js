@@ -13,7 +13,8 @@ const AddDelete = () => {
     useEffect(() => {
         const fetchPlayers = async () => {
             try {
-                const response = await fetch('https://statpad-react-back.onrender.com/api/players');
+                const response = await fetch('https://statpad-react-backend-mongodb.onrender.com');
+                //const response = await fetch('https://statpad-react-back.onrender.com/api/players');
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }

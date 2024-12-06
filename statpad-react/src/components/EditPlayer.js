@@ -33,7 +33,7 @@ const EditPlayer = (props) => {
         if (!inputs.img) {
             formData.append('image', props.image);
         }
-        const response = await fetch(`https://statpad-react-back.onrender.com/api/players/${props._id}`,{
+        const response = await fetch(`https://statpad-react-backend-mongodb.onrender.com/api/players/${props._id}`,{
             method:"PUT",
             body:formData
         });

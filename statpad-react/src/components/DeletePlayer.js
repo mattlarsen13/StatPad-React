@@ -9,7 +9,7 @@ const DeletePlayer = (props) => {
 
   const deletePlayer = async() => {
     console.log("DEBUG: Sending delete request for player ID:", selectedPlayer, "Type:", typeof selectedPlayer);
-    const response = await fetch(`https://statpad-react-back.onrender.com/api/players/${selectedPlayer}`,{  
+    const response = await fetch(`https://statpad-react-backend-mongodb.onrender.com/api/players/${selectedPlayer}`,{  
     method:"DELETE"
    });
 
@@ -23,7 +23,7 @@ const DeletePlayer = (props) => {
 
   useEffect(() => {
     (async () => {
-      const response = await axios.get("https://statpad-react-back.onrender.com/api/players");
+      const response = await axios.get("https://statpad-react-backend-mongodb.onrender.com/api/players");
       setPlayers(response.data);
     })();
   }, []); 

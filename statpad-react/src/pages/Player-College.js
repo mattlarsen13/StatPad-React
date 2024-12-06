@@ -28,7 +28,7 @@ const PlayerCollege = () => {
             <div className="player-card">
                 <h2 className="active">{player.name}</h2>
                 <a href={player["imagelink"]}>
-                    <img src={`https://statpad-react-back.onrender.com/${player.image}`} alt={player.name} />
+                    <img src={`https://statpad-react-backend-mongodb.onrender.com/${player.image}`} alt={player.name} />
                 </a>
                 <p>{player.description}</p>
                 <p>
@@ -60,7 +60,9 @@ const PlayerCollege = () => {
     useEffect(() => {
         const fetchPlayers = async () => {
             try {
-                const response = await fetch('https://statpad-react-back.onrender.com/api/players');
+                const response = await fetch('https://statpad-react-backend-mongodb.onrender.com');
+
+                //const response = await fetch('https://statpad-react-back.onrender.com/api/players');
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
