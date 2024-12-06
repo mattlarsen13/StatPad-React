@@ -33,10 +33,12 @@ const EditPlayer = (props) => {
         if (!inputs.img) {
             formData.append('image', props.image);
         }
+        console.log("Before fetch");
         const response = await fetch(`https://statpad-react-backend-mongodb.onrender.com/api/players/${props._id}`,{
             method:"PUT",
             body:formData
         });
+        console.log("after fetch");
 
         if(response.status === 200) {
             setResult("Player successfully updated");
